@@ -10,15 +10,13 @@ export default {
 
         const url = `http://newsapi.org/v2/everything?q=${this.searchQuery}&language=en&pageSize=10&page=${this.page}`;
         const options = {
-            headers: {
-                'Authorization': apiKey,
-            },
+            headers: {'Authorization': apiKey},
         };
 
         return fetch(url, options)
             .then(res => res.json())
             .then(({ articles }) => {
-                this.page += 1;
+                this.incrementPage();
                 return articles;
             })
             .catch(error => console.log(error));
@@ -28,6 +26,11 @@ export default {
     resetPage() {
         this.page = 1;
     },
+
+    incrementPage() {
+this.page += 1;
+    },
+
 
     get query() {
         return this.searchQuery;
