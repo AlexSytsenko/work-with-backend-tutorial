@@ -18,6 +18,7 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 max-width: 1280px;
+text-align: center;
 
 
 }
@@ -36,4 +37,15 @@ margin-bottom: 10px;
 
 .articles h2 {
   max-width: 320px;
+}
+
+.search-form {
+  margin-bottom: 30px;
+}
+
+
+.button {
+  color: black;
+  background-color: lightblue;
+  border: 2px solid blue;
 }

@@ -1,8 +1,8 @@
 const apiKey = 'e4819cc6c6aa44caa2653b01f97e1426';
 
-function fetchArticles(searchQuery) {
+function fetchArticles(searchQuery, page = 1) {
 
-    const url = `http://newsapi.org/v2/everything?q=${searchQuery}&language=en`;
+    const url = `http://newsapi.org/v2/everything?q=${searchQuery}&language=en&pageSize=10&page=${page}`;
     const options = {
     headers: {
         'Authorization': apiKey,
@@ -11,8 +11,8 @@ function fetchArticles(searchQuery) {
 
  return fetch(url, options)
      .then(res => res.json())
-     .then(data => data.articles)
-    .catch(error => console.log(error));
+     .then(({articles}) => articles)
+     .catch(error => console.log(error));
 
 }
 
