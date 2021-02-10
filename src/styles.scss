@@ -46,11 +46,11 @@ margin-bottom: 10px;
 
 
 .button {
-  padding: 10px;
+  padding: 5px 10px;
   color: white;
   background-color: rgb(139, 139, 214);
   border: transparent;
-  border-radius: 20px;
+  border-radius: 10px;
   outline: transparent;
   cursor: pointer;
 }
@@ -59,6 +59,9 @@ margin-bottom: 10px;
   display: none;
 }
 
+.button > .spinner.is-hidden {
+  display: none;
+}
 
 
 

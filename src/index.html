@@ -10,20 +10,28 @@
   <body>
     <form class="search-form js-search-form">
       <input type="text" name="query" placeholder="Что ищем?" />
-      <button class="button" type="submit">Искать</button>
+      <button class="btn primary button" type="submit">Искать</button>
     </form>
 
     
 
     <ul class="articles js-articles"></ul>
 
-    <div class="spinner-border loader is-hidden" id="spinner" role="status">
+    <!-- <div class="spinner-border loader is-hidden" id="spinner" role="status">
   <span class="visually-hidden">Loading...</span>
-</div>
+</div> -->
 
     <!-- <div id="spinner" class="loader is-hidden">Loading...</div> -->
 
-    <button class="btn primary button is-hidden" data-action="load-more">Показать еще</button>
+    <button class="btn primary button is-hidden" data-action="load-more">
+      <span class="spinner-border spinner-border-sm spinner is-hidden" role="status" aria-hidden="true"></span>
+      <span class="label">Показать еще</span>
+    </button>
+
+    <!-- <button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Загружаем
+</button> -->
 
     
 
