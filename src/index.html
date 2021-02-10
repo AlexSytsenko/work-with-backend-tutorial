@@ -8,13 +8,19 @@
   </head>
   <body>
     <form class="search-form js-search-form">
-      <input type="text" name="query" />
+      <input type="text" name="query" placeholder="Что ищем?" />
       <button class="button" type="submit">Искать</button>
     </form>
 
-    <button class="btn primary button" data-action="load-more">Показать еще</button>
+    
 
     <ul class="articles js-articles"></ul>
+
+    <div id="spinner" class="loader is-hidden">Loading...</div>
+
+    <button class="btn primary button is-hidden" data-action="load-more">Показать еще</button>
+
+    
 
     
   </body>

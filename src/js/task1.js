@@ -17,17 +17,33 @@ refs.searchForm.addEventListener('submit', event => {
 
     newsApi.resetPage();
 
-    form.reset();
+    refs.loadMoreBtn.classList.add('is-hidden');
+
+    refs.spinner.classList.remove('is-hidden');
+    
+    
     newsApi.fetchArticles().then(articles => {
         updateArticlesMarkup(articles);
+        refs.loadMoreBtn.classList.remove('is-hidden');
+    }).finally(() => {
+        refs.spinner.classList.add('is-hidden');
     });
-    
+        
+    form.reset();
+
+
 });
 
 
-refs.loadMoreBtn.addEventListener('click', ()=> {
-newsApi.fetchArticles().then(articles => {
+refs.loadMoreBtn.addEventListener('click', () => {
+    refs.loadMoreBtn.classList.add('is-hidden');
+    refs.spinner.classList.remove('is-hidden');
+
+    newsApi.fetchArticles().then(articles => {
         updateArticlesMarkup(articles);
+        refs.loadMoreBtn.classList.remove('is-hidden');
+    }).finally(() => {
+        refs.spinner.classList.add('is-hidden');
     });
 })
 
