@@ -8,7 +8,7 @@ export default {
 
     fetchArticles() {
 
-        const url = `http://newsapi.org/v2/everything?q=${this.searchQuery}&language=en&pageSize=10&page=${this.page}`;
+        const url = `http://newsapi.org/v2/everything?q=${this.searchQuery}&language=en&pageSize=9&page=${this.page}`;
         const options = {
             headers: {'Authorization': apiKey},
         };

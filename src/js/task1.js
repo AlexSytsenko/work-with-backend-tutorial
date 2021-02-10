@@ -16,36 +16,31 @@ refs.searchForm.addEventListener('submit', event => {
     refs.articlesContainer.innerHTML = "";
 
     newsApi.resetPage();
-
-    refs.loadMoreBtn.classList.add('is-hidden');
-
-    refs.spinner.classList.remove('is-hidden');
-    
-    
-    newsApi.fetchArticles().then(articles => {
-        updateArticlesMarkup(articles);
-        refs.loadMoreBtn.classList.remove('is-hidden');
-    }).finally(() => {
-        refs.spinner.classList.add('is-hidden');
-    });
-        
+    fetchArticles();
     form.reset();
-
-
 });
 
+refs.loadMoreBtn.addEventListener('click', fetchArticles);
 
-refs.loadMoreBtn.addEventListener('click', () => {
+function fetchArticles() {
     refs.loadMoreBtn.classList.add('is-hidden');
-    refs.spinner.classList.remove('is-hidden');
-
+    refs.spinner.classList.remove('is-hidden'); 
+    
     newsApi.fetchArticles().then(articles => {
         updateArticlesMarkup(articles);
         refs.loadMoreBtn.classList.remove('is-hidden');
+
+        console.log(document.documentElement.offsetHeight);
+
+//         window.scrollTo({
+//     top: document.documentElement.offsetHeight,
+//     behavior: "smooth"
+// });
+        
     }).finally(() => {
         refs.spinner.classList.add('is-hidden');
     });
-})
+}
 
 
 
